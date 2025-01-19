@@ -24,3 +24,5 @@ An interactive dashboard providing business insights using machine learning and 
 
 ## Development
 [Development guidelines will be added]# AiBiboard
+
+To use run app.py
