@@ -8,9 +8,13 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-SQLALCHEMY_DATABASE_URL = "postgresql://aidashboard:Arsenaljuve1234@localhost:5432/ai_dashboard"
+SQLALCHEMY_DATABASE_URL = "postgresql://obinna:Arsenaljuve1234@localhost:5432/ai_dashboard"
 
-engine = create_engine(SQLALCHEMY_DATABASE_URL)
+engine = create_engine(
+    SQLALCHEMY_DATABASE_URL,
+    pool_pre_ping=True,
+    echo=True  # Add this to see SQL queries in logs
+)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()
